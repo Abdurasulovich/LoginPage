@@ -1,0 +1,87 @@
+﻿<Window x:Class="LogInPage.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LogInPage"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    Height="400" Width="500"
+        ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    Loaded="Window_Loaded" MouseLeftButtonDown="Window_MouseDown" Topmost="True">
+
+    <Grid>
+        <StackPanel Height="400" Width="500">
+            <StackPanel.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#ef959d" Offset="0.0"/>
+                    <GradientStop Color="Blue" Offset="0.9"/>
+
+                </LinearGradientBrush>
+            </StackPanel.Background>
+        </StackPanel>
+        <Border Height="45" Width="280" Grid.Column="1" Margin="9 120 11 -150">
+
+            <Button
+            Name="Loginbtn"
+                Click="Loginbtn_Click"
+               Content="LOGIN"
+               Foreground="white"
+               FontSize="13"
+               FontWeight="Bold"
+               BorderThickness="0"
+                Height="45"
+               Padding="10">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="40"/>
+                    </Style>
+                </Button.Resources>
+
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0, 0" EndPoint="0 , 1">
+                        <GradientStop Color="Transparent" Offset="0.0"/>
+                        <GradientStop Color="#cfcec9" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </Border>
+        <Border Height="250" Width="300" Margin="0 0 0 20" Background="#cfcec9" CornerRadius="15" Grid.Column="1">
+
+
+            <Border.BitmapEffect>
+                <DropShadowBitmapEffect Color="#66666666" Direction="200" ShadowDepth="1" Opacity="1" Softness="1" />
+            </Border.BitmapEffect>
+
+        </Border>
+
+        <Border Width="80" Height="80" Margin="100,0,100,245" Grid.Column="1">
+            <Image Source="/Images/logged1.png" />
+
+        </Border>
+
+        <Border  Height="30" Width="30" Margin="0 0 170 40" Background="#02254b" Grid.Column="1" Padding="0 3 0 5">
+            <Image Source="/Images/man114.png"/>
+
+        </Border>
+        <TextBox materialDesign:HintAssist.Hint="Email" x:Name="txtEmail" Background="#385273" MouseLeftButtonDown="Muselftbtn_Down" BorderThickness="0"
+                 Grid.Column="1" Width="180" Height="30" Margin="0 0 133 40" HorizontalAlignment="Right"
+                 Foreground="#adb5bd" FontSize="13" BorderBrush="Transparent"
+                 VerticalContentAlignment="Center" Padding="5 0 0 0"/>
+       
+        <Border  Height="30" Width="30" Margin="0 80 170 40" MouseLeftButtonDown="Muselftbtn_Downs" Background="#02254b" Grid.Column="1" Padding="5 0 5 0">
+            <Image Source="/Images/lock.png" />
+        </Border>
+        <PasswordBox x:Name="txtPassword" materialDesign:HintAssist.Hint="Password" Background="#385273" BorderThickness="0" Grid.Column="1" Width="180" Height="30" Margin="0 80 133 40" 
+                 HorizontalAlignment="Right" Foreground="#adb5bd" Padding="5 0 0 0" FontSize="13" VerticalContentAlignment="Center">
+        </PasswordBox>
+
+        <CheckBox Content="Remember me" Height="20" Width="90" Grid.Column="1" Background="Transparent"
+                  Margin="25 180 125 40" Foreground="#385273" FontSize="10" Padding="4 0.5 0 0"/>
+
+        <Button Height="30" Width="120" Grid.Column="1" x:Name="forgotpsw"
+                Background="Transparent" Content="Forgot Password?" FontSize="10" Foreground="#385273" Margin="130 180 0 40" BorderThickness="0" MouseEnter="Mouse_enter">
+        </Button>
+    </Grid>
+
+</Window>
